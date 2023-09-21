@@ -1,11 +1,12 @@
-import { Home, Profile, Programs, Tables, SignIn, SignUp } from "@/pages";
+import { Home, Profile, Programs, QnA, Contact, Detail, QnADetail, SignIn } from "@/pages";
 import {
   HomeIcon,
   UserCircleIcon,
   SunIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
-  DocumentTextIcon
+  DocumentTextIcon,
+  BookmarkSquareIcon
 } from "@heroicons/react/24/solid";
 
 export const routes = [
@@ -27,12 +28,12 @@ export const routes = [
   //   path: "/sign-in",
   //   element: <SignIn />,
   // },
-  // {
-  //   icon: UserPlusIcon,
-  //   name: "Sign Up",
-  //   path: "/sign-up",
-  //   element: <SignUp />,
-  // },
+  {
+    icon: UserPlusIcon,
+    name: "contact",
+    path: "/contact",
+    element: <Contact />,
+  },
   // {
   //   icon: DocumentTextIcon,
   //   name: "Docs",
@@ -46,11 +47,23 @@ export const routes = [
     path: "/programs",
     element: <Programs />
   },
-   {
-    icon: SunIcon,
-    name: "tables",
-    path: "/tables",
-    element: <Tables />
+  {
+    icon: BookmarkSquareIcon,
+    name: "qnA",
+    path: "/qnA",
+    element: <QnA />
+  },
+  {
+    icon: BookmarkSquareIcon,
+    name: "detail",
+    path: "/detail",
+    element: <Detail />
+  },
+  {
+    icon: BookmarkSquareIcon,
+    name: "qna-detail",
+    path: "/qna-detail",
+    element: <QnADetail />
   },
 ];
 

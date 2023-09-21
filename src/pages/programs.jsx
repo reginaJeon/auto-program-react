@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import { Link } from "react-router-dom";
-import { projectsData } from "@/data";
+import { programsData } from "@/data";
 
 export function Programs() {
   return (
@@ -35,8 +35,8 @@ export function Programs() {
                     Architects design houses
                   </Typography>
                   <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
-                    {projectsData.map(
-                      ({ img, title, description, tag, route, members }) => (
+                    {programsData.map(
+                      ({ key, img, title, description, tag, route }) => (
                         <Card key={title} color="transparent" shadow={false}>
                           <CardHeader
                             floated={false}
@@ -71,12 +71,12 @@ export function Programs() {
                             </Typography>
                           </CardBody>
                           <CardFooter className="mt-6 flex items-center justify-between py-0 px-1">
-                            <Link to={route}>
+                            <Link to={route} state={key} >
                               <Button variant="outlined" size="sm">
                                 view project
                               </Button>
                             </Link>
-                            <div>
+                            {/* <div>
                               {members.map(({ img, name }, key) => (
                                 <Tooltip key={name} content={name}>
                                   <Avatar
@@ -90,7 +90,7 @@ export function Programs() {
                                   />
                                 </Tooltip>
                               ))}
-                            </div>
+                            </div> */}
                           </CardFooter>
                         </Card>
                       )
