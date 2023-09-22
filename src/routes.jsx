@@ -28,12 +28,7 @@ export const routes = [
   //   path: "/sign-in",
   //   element: <SignIn />,
   // },
-  {
-    icon: UserPlusIcon,
-    name: "contact",
-    path: "/contact",
-    element: <Contact />,
-  },
+ 
   // {
   //   icon: DocumentTextIcon,
   //   name: "Docs",
@@ -64,6 +59,12 @@ export const routes = [
     name: "qna-detail",
     path: "/qna-detail",
     element: <QnADetail />
+  },
+  {
+    icon: UserPlusIcon,
+    name: "contact",
+    path: "/contact",
+    element: <Contact />,
   },
 ];
 
