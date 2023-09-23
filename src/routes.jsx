@@ -3,9 +3,7 @@ import {
   HomeIcon,
   UserCircleIcon,
   SunIcon,
-  ArrowRightOnRectangleIcon,
   UserPlusIcon,
-  DocumentTextIcon,
   BookmarkSquareIcon
 } from "@heroicons/react/24/solid";
 

@@ -10,7 +10,7 @@ import {
   import { programsData } from "@/data";
   
   export function Goods(param) {
-    console.log("Goods pg::::: bgcolor::"+param.bgclass)
+    console.log("Goods pg::::: programsData::"+programsData)
     const classGrp = `relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl shadow-xl shadow-gray-500/5 ${param.bgclass}`;
     return (
       <>  
@@ -19,18 +19,20 @@ import {
             <div className="px-4 pb-4">
             <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
                 {programsData.map(
-                ({ key, img, title, description, tag, route }) => (
+                ({ key, img, title, tag, description, route, details }) => (
                     <Card key={title} color="transparent" shadow={false}>
                     <CardHeader
                         floated={false}
                         color="gray"
                         className="mx-0 mt-0 mb-4 h-64 xl:h-40"
                     >
-                        <img
-                        src={img}
-                        alt={title}
-                        className="h-full w-full object-cover"
-                        />
+                        <Link to={route} state={key} >
+                            <img
+                            src={img}
+                            alt={title}
+                            className="h-full w-full object-cover"
+                            />
+                        </Link>                        
                     </CardHeader>
                     <CardBody className="py-0 px-1">
                         <Typography
