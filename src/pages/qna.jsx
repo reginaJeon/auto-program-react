@@ -49,7 +49,7 @@ export function QnA() {
             </thead>
             <tbody>
               {qnaTableData.map(
-                ({ seq, name, date, viewNum, contents }, key) => {
+                ({ key, name, route, date, viewNum, contents }, seq) => {
                   const className = `py-3 px-5 ${
                     key === qnaTableData.length - 1
                       ? ""
@@ -58,14 +58,13 @@ export function QnA() {
 
                   return (
                     <tr key={seq}>
-                       
+                      
                         <td className={className}>                       
                           <Typography className="text-xs font-semibold text-blue-gray-600">
-                            {seq}
+                            {key}
                           </Typography>
                         </td>
-                        <td className={className}>
-                       
+                        <td className={className}>                       
                           <div className="flex items-center gap-4">
                             {/* <Avatar src={img} alt={name} size="sm" /> */}
                             <div>
@@ -74,7 +73,9 @@ export function QnA() {
                                 color="blue-gray"
                                 className="font-semibold"
                               >
-                                {name}
+                                 <Link to={route} state={key} >
+                                  {name}
+                                </Link>
                               </Typography>                            
                             </div>
                           </div>
@@ -84,16 +85,6 @@ export function QnA() {
                             {date}
                           </Typography>
                         </td>
-                     <td>
-                      <Link
-                        to={`/qna-detail/${seq}`}
-                        //target= "<QnADetail />"
-                        className="flex items-center gap-1 p-1 font-normal"
-                      > 링크는 여기
-                      </Link>
-                      </td>
-
-
                     </tr>
                   );
                 }

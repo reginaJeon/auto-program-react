@@ -7,15 +7,16 @@ export function Footer({ title, description, socials, menus, copyright }) {
   return (
     <footer className="relative px-4 pt-8 pb-6">
       <div className="container mx-auto">
-        <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h4" className="mb-4" color="blue-gray">
+        <div className="flex flex-wrap items-center justify-center md:justify-between">
+          <div className="w-full px-4">
+            <Typography variant="h4" className="mb-4 text-center" color="blue-gray">
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500">
+            <Typography className="font-normal text-blue-gray-500 text-center">
               {description}
+
             </Typography>
-            <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
+            <div className="mx-auto mt-6 mb-8 text-center justify-center gap-2 md:mb-0 lg:justify-start">
               {socials.map(({ color, name, path }) => (
                 <a
                   key={name}
@@ -23,16 +24,20 @@ export function Footer({ title, description, socials, menus, copyright }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <IconButton color="white" className="rounded-full">
+                  <IconButton color="yellow" className="rounded-full">
                     <Typography color={color}>
-                      <i className={`fa-brands fa-${name}`} />
+                      {/* <i className={`fa-brands fa-${name}`} /> */}
+                      <i className="fa-regular fa-comments"></i>
                     </Typography>
                   </IconButton>
                 </a>
               ))}
             </div>
+            <Typography variant="h6" className="mb-4 text-center" color="blue-gray">              
+              <a href="tel:+01079324717">hihiood<br/>010 7932 4717</a>
+            </Typography>
           </div>
-          <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
+          {/* <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
             {menus.map(({ name, items }) => (
               <div key={name}>
                 <Typography
@@ -60,7 +65,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
                 </ul>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         <hr className="my-6 border-gray-300" />
         <div className="flex flex-wrap items-center justify-center md:justify-between">
@@ -79,40 +84,45 @@ export function Footer({ title, description, socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Material Tailwind",
+  title: "자동화프로그램",
   description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
+    "자동화 프로그램 auto posting with chat GPT",
   socials: [
     {
-      color: "blue",
-      name: "facebook",
-      path: "https://www.facebook.com/CreativeTim",
-    },
-    {
-      color: "light-blue",
-      name: "twitter",
-      path: "https://www.twitter.com/creativetim",
-    },
-    {
-      color: "purple",
-      name: "instagram",
-      path: "https://www.instagram.com/creativetimofficial/",
-    },
-    {
-      color: "pink",
-      name: "dribbble",
-      path: "https://www.dribbble.com/creativetim",
-    },
-    {
-      color: "red",
-      name: "youtube",
-      path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
-    },
-    {
       color: "black",
-      name: "github",
-      path: "https://github.com/creativetimofficial/material-tailwind",
+      name: "talk",
+      path: "https://open.kakao.com/o/sqMkpTJf",
     },
+    // {
+    //   color: "blue",
+    //   name: "facebook",
+    //   path: "https://www.facebook.com/CreativeTim",
+    // },
+    // {
+    //   color: "light-blue",
+    //   name: "twitter",
+    //   path: "https://www.twitter.com/creativetim",
+    // },
+    // {
+    //   color: "purple",
+    //   name: "instagram",
+    //   path: "https://www.instagram.com/creativetimofficial/",
+    // },
+    // {
+    //   color: "pink",
+    //   name: "dribbble",
+    //   path: "https://www.dribbble.com/creativetim",
+    // },
+    // {
+    //   color: "red",
+    //   name: "youtube",
+    //   path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+    // },
+    // {
+    //   color: "black",
+    //   name: "github",
+    //   path: "https://github.com/creativetimofficial/material-tailwind",
+    // },
   ],
   menus: [
     {

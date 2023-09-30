@@ -5,8 +5,14 @@ import {
   BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
 import { Footer } from "@/widgets/layout";
+import { useLocation } from "react-router-dom";
+import { qnaTableData } from "@/data";
 
 export function QnADetail() {
+  const location = useLocation();
+  const param = location.state;
+  const data_detail = qnaTableData.find(item => item.key === param);
+  console.log("param"+param)
   return (
     <>
       <section className="relative block h-[50vh]">

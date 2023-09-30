@@ -48,7 +48,7 @@ export function Detail() {
                   <img src={data_detail.img} />
                 </Typography>
                 <div className="mt-32 flex flex-wrap items-center">
-                  <div className="mx-auto w-full p-5 md:w-5/12">                  
+                  <div className="mx-auto w-full p-5 md:w-5/12">                 
                     <Typography variant="h5" className="mb-3 font-bold" color="blue-gray">
                     {data_detail.details.desc.descTitle}
                     </Typography>
