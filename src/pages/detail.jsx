@@ -40,14 +40,14 @@ export function Detail() {
           <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
             <div className="px-6">
               <div className="my-8 text-center">
-                <Typography variant="h2" color="blue-gray" className="mb-2">
-                    제품 상세 소개페이지- {data_detail.title}
+                <Typography variant="h2" color="blue-gray" className="my-12">
+                    {data_detail.title}
                 </Typography>
                
                 <Typography className="mb-2 flex items-center justify-center gap-2">
                   <img src={data_detail.img} />
                 </Typography>
-                <div className="mt-32 flex flex-wrap items-center">
+                <div className="mt-20 flex flex-wrap items-start">
                   <div className="mx-auto w-full p-5 md:w-5/12">                 
                     <Typography variant="h5" className="mb-3 font-bold" color="blue-gray">
                     {data_detail.details.desc.descTitle}
@@ -80,36 +80,30 @@ export function Detail() {
                       {renderHTML(data_detail.details.regulation.regContents)}
                     </Typography>
                   </div>
-                  <Typography className="mb-2 flex items-center justify-center gap-2">
-                    {renderHTML(data_detail.details.price)}
-                  </Typography>     
-                  <div className="mx-auto w-full p-5 md:w-9/12">           
-                    <table className="table-auto">
-                      <tbody>
-                        <tr>
-                          <th className="md:w-2/12"></th>
-                          <th>STANDARD <span>100,000원</span></th>
-                          <th>DELUXE <span>500,000원</span></th>
-                          <th>PREMIUM <span>1,000,000원</span></th>
-                        </tr>
-                        <tr>
-                          <th>패키지 설명</th>
-                          <td>자동 ip 변경 프로그램 설정에 따라 자동으로 ip 변경합니다.</td>
-                          <td>자동 ip 변경 + 프로그램 제작 자동 ip 변경 후 인터넷 접속해서 클릭, 댓글쓰기, 로그인하기 등 작업을 합니다.</td>
-                          <td>DELUXE+Proxy적용 DELUXE 상품에 고급proxy 적용 작업을 합니다.</td>
-                        </tr>
-                        <tr>
-                          <th>수정 횟수</th>
-                          <td>1회</td><td>1회</td><td>1회</td>
-                        </tr>
-                        <tr>
-                          <th>작업일</th>
-                          <td>2일</td><td>7일</td><td>7일</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                  {document.querySelectorAll("td").length>0 ? document.querySelectorAll("td")[0].classList.add("111") : ""}
-                  </div> 
+                  <div className="mx-auto w-full p-5 md:w-9/12">
+                    <Typography variant="h5" className="mb-3 font-bold" color="blue-gray">
+                      {data_detail.details.price.priceTitle}
+                    </Typography>
+                    <Typography className="mb-8 font-normal text-left text-blue-gray-500">
+                      {renderHTML(data_detail.details.price.priceContents)}
+                    </Typography>    
+                  </div>
+                  <div className="mx-auto w-full p-5 md:w-9/12">
+                    {data_detail.details.etc ? (
+                      <>
+                        <Typography variant="h5" className="mb-3 font-bold" color="blue-gray">
+                          {data_detail.details.etc.etcTitle}
+                        </Typography>
+                        <Typography className="mb-8 font-normal text-left text-blue-gray-500">
+                          {renderHTML(data_detail.details.etc.etcContents)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <> {/* data_detail.details.etc가 없을 때 렌더링할 내용 */}
+                        <p></p>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

@@ -68,16 +68,6 @@ export function Footer({ title, description, socials, menus, copyright }) {
           </div> */}
         </div>
         <hr className="my-6 border-gray-300" />
-        <div className="flex flex-wrap items-center justify-center md:justify-between">
-          <div className="mx-auto w-full px-4 text-center">
-            <Typography
-              variant="small"
-              className="font-normal text-blue-gray-500"
-            >
-              {copyright}
-            </Typography>
-          </div>
-        </div>
       </div>
     </footer>
   );
@@ -93,36 +83,6 @@ Footer.defaultProps = {
       name: "talk",
       path: "https://open.kakao.com/o/sqMkpTJf",
     },
-    // {
-    //   color: "blue",
-    //   name: "facebook",
-    //   path: "https://www.facebook.com/CreativeTim",
-    // },
-    // {
-    //   color: "light-blue",
-    //   name: "twitter",
-    //   path: "https://www.twitter.com/creativetim",
-    // },
-    // {
-    //   color: "purple",
-    //   name: "instagram",
-    //   path: "https://www.instagram.com/creativetimofficial/",
-    // },
-    // {
-    //   color: "pink",
-    //   name: "dribbble",
-    //   path: "https://www.dribbble.com/creativetim",
-    // },
-    // {
-    //   color: "red",
-    //   name: "youtube",
-    //   path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
-    // },
-    // {
-    //   color: "black",
-    //   name: "github",
-    //   path: "https://github.com/creativetimofficial/material-tailwind",
-    // },
   ],
   menus: [
     {
@@ -161,20 +121,7 @@ Footer.defaultProps = {
         },
       ],
     },
-  ],
-  copyright: (
-    <>
-      Copyright © {year} Material Tailwind by{" "}
-      <a
-        href="https://www.creative-tim.com?ref=mtk"
-        target="_blank"
-        className="text-blue-gray-500 transition-colors hover:text-blue-500"
-      >
-        Creative Tim
-      </a>
-      .
-    </>
-  ),
+  ], 
 };
 
 Footer.propTypes = {

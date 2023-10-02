@@ -10,7 +10,6 @@ import {
   import { programsData } from "@/data";
   
   export function Goods(param) {
-    console.log("Goods pg::::: programsData::"+programsData)
     const classGrp = `relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl shadow-xl shadow-gray-500/5 ${param.bgclass}`;
     return (
       <>  
@@ -39,7 +38,7 @@ import {
                         variant="small"
                         className="font-normal text-blue-gray-500"
                         >
-                        {tag}
+                        Project #{key}
                         </Typography>
                         <Typography
                         variant="h5"
@@ -50,8 +49,7 @@ import {
                         </Typography>
                         <Typography
                         variant="small"
-                        className="font-normal text-blue-gray-500"
-                        >
+                        className="font-normal text-blue-gray-500 h-20 line-clamp-3 hover:line-clamp-4"                        >
                         {description}
                         </Typography>
                     </CardBody>

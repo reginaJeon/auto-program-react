@@ -8,6 +8,10 @@ import { Footer } from "@/widgets/layout";
 import { useLocation } from "react-router-dom";
 import { qnaTableData } from "@/data";
 
+function renderHTML(htmlString) {
+  return <span dangerouslySetInnerHTML={{ __html: htmlString }} />;
+}
+
 export function QnADetail() {
   const location = useLocation();
   const param = location.state;
@@ -23,7 +27,7 @@ export function QnADetail() {
         <div className="container mx-auto">
           <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
             <div className="px-6">
-              <div className="flex flex-wrap justify-center">
+              {/* <div className="flex flex-wrap justify-center">
                 <div className="flex w-full justify-center px-4 lg:order-2 lg:w-3/12">
                   <div className="relative">
                     <div className="-mt-20 w-40">
@@ -46,7 +50,7 @@ export function QnADetail() {
                         variant="lead"
                         color="blue-gray"
                         className="font-bold uppercase"
-                      >                        
+                      > 12
                       </Typography>
                       <Typography
                         variant="small"
@@ -87,18 +91,18 @@ export function QnADetail() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="my-8 text-center">
                 <Typography variant="h2" color="blue-gray" className="mb-2">
-                    QnA- qna의 datail page
+                    QnA 상세 - {data_detail.name}
                 </Typography>
-                <div className="mb-16 flex items-center justify-center gap-2">
+                {/* <div className="mb-16 flex items-center justify-center gap-2">
                   <MapPinIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
                   <Typography className="font-medium text-blue-gray-700">
                     Los Angeles, California
                   </Typography>
-                </div>
-                <div className="mb-2 flex items-center justify-center gap-2">
+                </div> */}
+                {/* <div className="mb-2 flex items-center justify-center gap-2">
                   <BriefcaseIcon className="-mt-px h-4 w-4 text-blue-gray-700" />
                   <Typography className="font-medium text-blue-gray-700">
                     Solution Manager - Creative Tim Officer
@@ -109,20 +113,21 @@ export function QnADetail() {
                   <Typography className="font-medium text-blue-gray-700">
                     University of Computer Science
                   </Typography>
-                </div>
+                </div> */}
               </div>
-
-              <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
+              <div className="border-t border-blue-gray-50 py-6">
+                <Typography className="font-normal text-blue-gray-500 lg:w-9/12 mx-auto">
+                  <span className="font-bold text-blue-gray-500">날짜 : </span>{data_detail.date}
+                  <span className="font-bold text-blue-gray-500 ml-5">조회수 : </span>{data_detail.viewNum}
+                </Typography>
+              </div>
+              <div className="mb-10 border-t border-blue-gray-50 py-6 ">
                 <div className="mt-2 flex flex-wrap justify-center">
                   <div className="flex w-full flex-col items-center px-4 lg:w-9/12">
                     <Typography className="mb-8 font-normal text-blue-gray-500">
-                      An artist of considerable range, Jenna the name taken by
-                      Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                      performs and records all of his own music, giving it a
-                      warm, intimate feel with a solid groove structure. An
-                      artist of considerable range.
+                      {renderHTML(data_detail.contents)}
                     </Typography>
-                    <Button variant="text">Show more</Button>
+                    {/* <Button variant="text">Show more</Button> */}
                   </div>
                 </div>
               </div>
